@@ -14,16 +14,16 @@ export default class Clock extends React.Component {
     let hours = currentdate.getHours();    
 
     // correct for number over 24, and negatives
-    if(hours >= 24 ){ 
+    if(hours >= 24 ) { 
       hours -= 24; 
     }
-    if( hours < 0   ){
+    if( hours < 0   ) {
       hours += 12;
     }
 
     // add leading zero, first convert hours to string
     hours = hours + '';
-    if( hours.length == 1 ){
+    if( hours.length == 1 ) {
       hours = '0' + hours;
     }
 
@@ -31,7 +31,7 @@ export default class Clock extends React.Component {
     let minutes = currentdate.getUTCMinutes();
     // add leading zero, first convert hours to string
     minutes = minutes + '';
-    if( minutes.length == 1 ){ minutes = '0' + minutes; }
+    if( minutes.length === 1 ) { minutes = '0' + minutes; }
 
     let seconds = currentdate.getUTCSeconds();
     //console.log(hours, minutes, seconds)
@@ -47,7 +47,7 @@ export default class Clock extends React.Component {
     this.setTime();
   }
   componentDidMount() {
-    let newid = window.setInterval(function () {
+    const newid = window.setInterval(function () {
       this.setTime();
     }.bind(this), 1000);
     this.setState({id: newid})
