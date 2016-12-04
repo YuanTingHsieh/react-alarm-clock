@@ -138,7 +138,12 @@ class AlarmApp extends React.Component {
   render() {
     return (
       <div>
-          <header className="header">
+            <nav className="navbar navbar-full navbar-dark bg-inverse">
+              <div className="container">
+                <a className="navbar-brand" href="#">Alarms For Today</a>
+              </div>
+            </nav>
+
             <h1>Alarms For Today</h1>
             <h2>{this.state.statusMes}</h2>
             <input
@@ -161,7 +166,6 @@ class AlarmApp extends React.Component {
             />
             <button onClick={this.handleAdd}>set this alarm</button>
             <Clock />
-          </header>
         <section className="main">
           <ul className="">{this.renderAlarmList()}</ul>
           
