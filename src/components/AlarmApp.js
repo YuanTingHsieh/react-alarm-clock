@@ -119,12 +119,13 @@ class AlarmApp extends React.Component {
     );
   }
 
-  renderTime(value, onChangeFunc, currentTime) {
+  renderTime(value, onChangeFunc, currentTime, helpMes) {
     return (
-      <div className="row">
-        <div className="col-xs-4 offset-xs-2">
           <div className="row">
-            <span className="fa fa-sort-asc offset-xs-6" aria-hidden="true"></span>
+            {helpMes}
+          </div>
+          <div className="row">
+            <button className="fa fa-sort-asc offset-xs-6" aria-hidden="true"></button>
           </div>
           <div className="row">
           <div className="col-xs-2 offset-xs-5">
@@ -132,10 +133,8 @@ class AlarmApp extends React.Component {
           </div>
           </div>
           <div className="row">
-            <span className="fa fa-sort-desc offset-xs-6" aria-hidden="true"></span>
-          </div>    
-        </div>
-      </div>
+            <button className="fa fa-sort-desc offset-xs-6" aria-hidden="true"></button>
+          </div>
     );
   }
 
@@ -168,13 +167,15 @@ class AlarmApp extends React.Component {
 
             <Clock />
             <h2>{this.state.statusMes}</h2>
-            {this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours())}
-            <input
-              className=""
-              placeholder="Set minutes (0-60)!"
-              value={this.state.inputMinute}
-              onChange={this.handleInputMinute}
-            />
+            <div className="row">
+              <div className="col-xs-4 offset-xs-2">
+                {this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours(), "Set Hours (0-24)!")}
+              </div>
+              <div className="col-xs-4">
+                {this.renderTime(this.state.inputMinute, this.handleInputMinute, date.getMinutes(), "Set Minutes (0-60)!")}
+              </div>
+            </div>
+            
             <input
               className=""
               placeholder="Music you want (URL)"
