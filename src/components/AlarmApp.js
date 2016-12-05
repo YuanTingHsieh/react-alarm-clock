@@ -27,6 +27,7 @@ class AlarmApp extends React.Component {
     this.decreaseTime = this.decreaseTime.bind(this);
     this.decreaseRemainSeconds = this.decreaseRemainSeconds.bind(this);
     // this.renderMusicList = this.renderMusicList.bind(this);
+    this.renderTime = this.renderTime.bind(this);
   }
 
   addItem(hour, minute, url, oneremainSeconds) {
@@ -127,7 +128,7 @@ class AlarmApp extends React.Component {
           </div>
           <div className="row">
           <div className="col-xs-2 offset-xs-5">
-            <input type="text" placeholder={currentTime} value={value} className="form-control", onChange={onChangeFunc}></input>
+            <input type="text" placeholder={currentTime} value={value} className="form-control" onChange={onChangeFunc}></input>
           </div>
           </div>
           <div className="row">
