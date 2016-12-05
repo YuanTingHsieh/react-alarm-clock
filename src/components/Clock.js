@@ -10,12 +10,12 @@ export default class Clock extends React.Component {
 
   setTime() {
 
-    var currentdate = new Date();
-    let hours = currentdate.getHours();    
+    let currentdate = new Date();
+    let hours = currentdate.getHours();  
 
     // correct for number over 24, and negatives
-    if(hours >= 24 ) { 
-      hours -= 24; 
+    if(hours >= 24 ) {
+      hours -= 24;
     }
     if( hours < 0   ) {
       hours += 12;
@@ -47,7 +47,7 @@ export default class Clock extends React.Component {
     const newid = window.setInterval(function () {
       this.setTime();
     }.bind(this), 1000);
-    this.setState({id: newid})
+    this.setState({id: newid});
   }
   componentWillUnmount() {
     clearInterval(this.state.id);

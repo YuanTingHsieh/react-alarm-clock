@@ -30,7 +30,7 @@ class AlarmApp extends React.Component {
   }
 
   addItem(hour, minute, url, oneremainSeconds) {
-    this.setState( { items: [...this.state.items, { hours: hour, minutes: minute, url: url, remainSeconds: oneremainSeconds}] } );
+    this.setState({ items: [...this.state.items, { hours: hour, minutes: minute, url: url, remainSeconds: oneremainSeconds }] });
   }
 
   removeItem(idx, url) {
@@ -50,33 +50,32 @@ class AlarmApp extends React.Component {
   }
 
   handleAdd() {
-      if (isNaN(this.state.inputMinute) || isNaN(this.state.inputHour)) {
-        this.setState({ inputHour: '', inputMinute: '' });
-        this.setState({ statusMes: "Invalid Values" });
+    if (isNaN(this.state.inputMinute) || isNaN(this.state.inputHour)) {
+      this.setState({ inputHour: '', inputMinute: '' });
+      this.setState({ statusMes: "Invalid Values" });
+    } else {
+      const hour = parseInt(this.state.inputHour);
+      const minutes = parseInt(this.state.inputMinute);
+      if(hour < 0 || hour > 24) {
+        this.setState({ statusMes: "Hours should be in 0~24" });
+        this.setState({ inputHour: ''});
+      } else if (minutes < 0 || minutes > 60) {
+        this.setState({ statusMes: "Minutes should be in 0~60" });
+        this.setState({ inputMinute: ''});
       } else {
-        const hour = parseInt(this.state.inputHour);
-        const minutes = parseInt(this.state.inputMinute);
-        if(hour < 0 || hour > 24) {
-          this.setState({ statusMes: "Hours should be in 0~24" });
-          this.setState({ inputHour: ''});
-        } else if (minutes < 0 || minutes > 60) {
-          this.setState({ statusMes: "Minutes should be in 0~60" });
-          this.setState({ inputMinute: ''});
+        const date = new Date()
+        const alarmTime = (hour * 60 + minutes) * 60;
+        const currentTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
+        const oneremainSeconds = alarmTime - currentTime;
+        if (oneremainSeconds <= 0) {
+          this.setState({ statusMes: "Invalid time!! Should be greater than Now!!" });
+          this.setState({ inputHour: '', inputMinute: '' });
         } else {
-          const date = new Date()
-          const alarmTime = (hour * 60 + minutes) * 60;
-          const currentTime = (date.getHours() * 60 + date.getMinutes()) * 60 + date.getSeconds();
-          const oneremainSeconds = alarmTime - currentTime;
-          if (oneremainSeconds <= 0) {
-            this.setState({ statusMes: "Invalid time!! Should be greater than Now!!" });
-            this.setState({ inputHour: '', inputMinute: '' });
-          } else {
-            this.addItem(hour, minutes, this.state.inputURL, oneremainSeconds);
-            this.setState({ inputHour: '', inputMinute: '', inputURL: '' });
-          }
+          this.addItem(hour, minutes, this.state.inputURL, oneremainSeconds);
+          this.setState({ inputHour: '', inputMinute: '', inputURL: '' });
         }
       }
-    
+    }    
   }
 
   handleInputHour(e) {
@@ -125,7 +124,7 @@ class AlarmApp extends React.Component {
   //   );
   // }
 
-  componentDidMount() {
+  componentWillMount() {
     const newid = window.setInterval(function () {
       this.decreaseRemainSeconds();
     }.bind(this), 1000);
