@@ -123,7 +123,9 @@ class AlarmApp extends React.Component {
     return (
       <div>
           <div className="row">
-            {helpMes}
+            <div className="offset-xs-5">
+              {helpMes}
+            </div>
           </div>
           <div className="row">
             <button className="fa fa-sort-asc offset-xs-6" aria-hidden="true"></button>
@@ -169,22 +171,28 @@ class AlarmApp extends React.Component {
 
             <Clock />
             <h2>{this.state.statusMes}</h2>
+            <div className="container-fluid">
             <div className="row">
-              <div className="col-xs-4 offset-xs-2">
+              <div className="col-xs-4">
                 {this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours(), "Set Hours (0-24)!")}
               </div>
               <div className="col-xs-4">
                 {this.renderTime(this.state.inputMinute, this.handleInputMinute, date.getMinutes(), "Set Minutes (0-60)!")}
               </div>
+              <div className="col-xs-4">
+                <input
+                  className=""
+                  placeholder="Music you want (URL)"
+                  value={this.state.inputURL}
+                  onChange={this.handleInputURL}
+                />
+                <button onClick={this.handleAdd}>set this alarm</button>
+              </div>
+            </div>
             </div>
             
-            <input
-              className=""
-              placeholder="Music you want (URL)"
-              value={this.state.inputURL}
-              onChange={this.handleInputURL}
-            />
-            <button onClick={this.handleAdd}>set this alarm</button>
+            
+            
             <setTimeItem />
             
         <section className="main">
