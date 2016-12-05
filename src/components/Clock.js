@@ -22,18 +22,15 @@ export default class Clock extends React.Component {
     }
 
     // add leading zero, first convert hours to string
-    hours = hours + '';
-    if( hours.length == 1 ) {
-      hours = '0' + hours;
-    }
+    hours = (hours < 10 ? "0" : "" ) + hours
 
     // minutes are the same on every time zone
     let minutes = currentdate.getUTCMinutes();
     // add leading zero, first convert hours to string
-    minutes = minutes + '';
-    if( minutes.length === 1 ) { minutes = '0' + minutes; }
+    minutes = (minutes < 10 ? "0" : "" ) + minutes
 
     let seconds = currentdate.getUTCSeconds();
+    seconds = (seconds < 10 ? "0" : "" ) + seconds
     //console.log(hours, minutes, seconds)
     this.setState({
       hours: hours,
