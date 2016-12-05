@@ -128,7 +128,7 @@ class AlarmApp extends React.Component {
             </div>
           </div>
           <div className="row">
-            <button className="fa fa-sort-asc offset-xs-6" aria-hidden="true"></button>
+            <button type="button" className="btn btn-outline-primary btn-sm"><span className="fa fa-sort-asc" aria-hidden="true"></span></button>
           </div>
           <div className="row">
           <div className="col-xs-2 offset-xs-5">
@@ -136,7 +136,7 @@ class AlarmApp extends React.Component {
           </div>
           </div>
           <div className="row">
-            <button className="fa fa-sort-desc offset-xs-6" aria-hidden="true"></button>
+            <button type="button" className="btn btn-outline-primary btn-sm"><span className="fa fa-sort-desc" aria-hidden="true"></span></button>
           </div>
       </div>
     );
