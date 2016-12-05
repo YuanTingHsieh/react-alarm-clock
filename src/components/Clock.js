@@ -58,7 +58,7 @@ export default class Clock extends React.Component {
 
   render() {
     return (<h1>
-      {this.state.hours}:{this.state.minutes}:{this.state.seconds}
+      Current Time: {this.state.hours}:{this.state.minutes}:{this.state.seconds}
     </h1>
     );
   }

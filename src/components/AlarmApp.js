@@ -144,7 +144,7 @@ class AlarmApp extends React.Component {
               </div>
             </nav>
 
-            <h1>Alarms For Today</h1>
+            <Clock />
             <h2>{this.state.statusMes}</h2>
             <input
               className=""
@@ -165,7 +165,7 @@ class AlarmApp extends React.Component {
               onChange={this.handleInputURL}
             />
             <button onClick={this.handleAdd}>set this alarm</button>
-            <Clock />
+            
         <section className="main">
           <ul className="">{this.renderAlarmList()}</ul>
           
