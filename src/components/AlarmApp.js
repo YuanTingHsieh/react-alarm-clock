@@ -2,6 +2,7 @@ import React from 'react';
 import AlarmItem from './AlarmItem';
 import Clock from './Clock';
 // import Music from './Music';
+import setTimeItem from './setTimeItem';
 
 class AlarmApp extends React.Component {
   constructor(props) {
@@ -165,6 +166,7 @@ class AlarmApp extends React.Component {
               onChange={this.handleInputURL}
             />
             <button onClick={this.handleAdd}>set this alarm</button>
+            <setTimeItem />
             
         <section className="main">
           <ul className="">{this.renderAlarmList()}</ul>
