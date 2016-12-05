@@ -22001,8 +22001,8 @@
 	    // }
 
 	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
+	    key: 'componentWillMount',
+	    value: function componentWillMount() {
 	      var newid = window.setInterval(function () {
 	        this.decreaseRemainSeconds();
 	      }.bind(this), 1000);
