@@ -6,21 +6,19 @@ export default class setTimeItem extends React.Component {
   }
   render() {
     return (
-      <div>
-        <div className="row">
-          <div className="col-md-2">
-            <div className="center-block"><span className="glyphicon glyphicon-triangle-top"></span></div>
+      <div className="row">
+        <div className="col-xs-4 offset-xs-2">
+          <div className="row">
+            <span className="fa fa-sort-asc offset-xs-6" aria-hidden="true"></span>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-md-2">
-            <input className="center-block" placeholder="GGWP" />
+          <div className="row">
+          <div className="col-xs-2 offset-xs-5">
+            <input type="text" placeholder={this.props.currentTime} className="form-control"></input>
           </div>
-        </div>
-        <div className="row">
-          <div className="col-md-2">
-            <div className="center-block"><span className="glyphicon glyphicon-triangle-bottom"></span></div>
           </div>
+          <div className="row">
+            <span className="fa fa-sort-desc offset-xs-6" aria-hidden="true"></span>
+          </div>    
         </div>
       </div>
     );

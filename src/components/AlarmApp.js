@@ -2,7 +2,7 @@ import React from 'react';
 import AlarmItem from './AlarmItem';
 import Clock from './Clock';
 // import Music from './Music';
-import setTimeItem from './setTimeItem';
+//import setTimeItem from './setTimeItem';
 
 class AlarmApp extends React.Component {
   constructor(props) {
@@ -118,6 +118,26 @@ class AlarmApp extends React.Component {
     );
   }
 
+  renderTime(value, onChangeFunc, currentTime) {
+    return (
+      <div className="row">
+        <div className="col-xs-4 offset-xs-2">
+          <div className="row">
+            <span className="fa fa-sort-asc offset-xs-6" aria-hidden="true"></span>
+          </div>
+          <div className="row">
+          <div className="col-xs-2 offset-xs-5">
+            <input type="text" placeholder={currentTime} value={value} className="form-control", onChange={onChangeFunc}></input>
+          </div>
+          </div>
+          <div className="row">
+            <span className="fa fa-sort-desc offset-xs-6" aria-hidden="true"></span>
+          </div>    
+        </div>
+      </div>
+    );
+  }
+
   // renderMusicList() {
   //   return this.state.musicItems.map(
   //     (v, i) => <Music url={v.url} />
@@ -136,6 +156,7 @@ class AlarmApp extends React.Component {
   }
 
   render() {
+    const date = new Date()
     return (
       <div>
             <nav className="navbar navbar-full navbar-dark bg-inverse">
@@ -146,12 +167,7 @@ class AlarmApp extends React.Component {
 
             <Clock />
             <h2>{this.state.statusMes}</h2>
-            <input
-              className=""
-              placeholder="Set hour (0-24)!"
-              value={this.state.inputHour}
-              onChange={this.handleInputHour}
-            />
+            {this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours())}
             <input
               className=""
               placeholder="Set minutes (0-60)!"
