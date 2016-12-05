@@ -22011,7 +22011,7 @@
 	          { className: 'row' },
 	          _react2.default.createElement(
 	            'button',
-	            { type: 'button', className: 'btn btn-outline-primary btn-sm' },
+	            { type: 'button', className: 'btn btn-outline-primary btn-sm offset-xs-6' },
 	            _react2.default.createElement('span', { className: 'fa fa-sort-asc', 'aria-hidden': 'true' })
 	          )
 	        ),
@@ -22029,7 +22029,7 @@
 	          { className: 'row' },
 	          _react2.default.createElement(
 	            'button',
-	            { type: 'button', className: 'btn btn-outline-primary btn-sm' },
+	            { type: 'button', className: 'btn btn-outline-primary btn-sm offset-xs-6' },
 	            _react2.default.createElement('span', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
 	          )
 	        )
@@ -22100,6 +22100,8 @@
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'col-xs-4' },
+	              _react2.default.createElement('div', { className: 'row' }),
+	              _react2.default.createElement('div', { className: 'row' }),
 	              _react2.default.createElement('input', {
 	                className: '',
 	                placeholder: 'Music you want (URL)',
