@@ -22000,7 +22000,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'row' },
-	          helpMes
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'offset-xs-5' },
+	            helpMes
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -22071,28 +22075,36 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'row' },
+	          { className: 'container-fluid' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'col-xs-4 offset-xs-2' },
-	            this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours(), "Set Hours (0-24)!")
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'col-xs-4' },
-	            this.renderTime(this.state.inputMinute, this.handleInputMinute, date.getMinutes(), "Set Minutes (0-60)!")
+	            { className: 'row' },
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col-xs-4' },
+	              this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours(), "Set Hours (0-24)!")
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col-xs-4' },
+	              this.renderTime(this.state.inputMinute, this.handleInputMinute, date.getMinutes(), "Set Minutes (0-60)!")
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { className: 'col-xs-4' },
+	              _react2.default.createElement('input', {
+	                className: '',
+	                placeholder: 'Music you want (URL)',
+	                value: this.state.inputURL,
+	                onChange: this.handleInputURL
+	              }),
+	              _react2.default.createElement(
+	                'button',
+	                { onClick: this.handleAdd },
+	                'set this alarm'
+	              )
+	            )
 	          )
-	        ),
-	        _react2.default.createElement('input', {
-	          className: '',
-	          placeholder: 'Music you want (URL)',
-	          value: this.state.inputURL,
-	          onChange: this.handleInputURL
-	        }),
-	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.handleAdd },
-	          'set this alarm'
 	        ),
 	        _react2.default.createElement('setTimeItem', null),
 	        _react2.default.createElement(
