@@ -128,7 +128,7 @@ class AlarmApp extends React.Component {
             </div>
           </div>
           <div className="row">
-            <button type="button" className="btn btn-outline-primary btn-sm"><span className="fa fa-sort-asc" aria-hidden="true"></span></button>
+            <button type="button" className="btn btn-outline-primary btn-sm offset-xs-6"><span className="fa fa-sort-asc" aria-hidden="true"></span></button>
           </div>
           <div className="row">
           <div className="col-xs-2 offset-xs-5">
@@ -136,7 +136,7 @@ class AlarmApp extends React.Component {
           </div>
           </div>
           <div className="row">
-            <button type="button" className="btn btn-outline-primary btn-sm"><span className="fa fa-sort-desc" aria-hidden="true"></span></button>
+            <button type="button" className="btn btn-outline-primary btn-sm offset-xs-6"><span className="fa fa-sort-desc" aria-hidden="true"></span></button>
           </div>
       </div>
     );
@@ -180,6 +180,8 @@ class AlarmApp extends React.Component {
                 {this.renderTime(this.state.inputMinute, this.handleInputMinute, date.getMinutes(), "Set Minutes (0-60)!")}
               </div>
               <div className="col-xs-4">
+                <div className="row"></div>
+                <div className="row"></div>
                 <input
                   className=""
                   placeholder="Music you want (URL)"
