@@ -22009,7 +22009,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'row' },
-	          _react2.default.createElement('button', { className: 'fa fa-sort-asc offset-xs-6', 'aria-hidden': 'true' })
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'button', className: 'btn btn-outline-primary btn-sm' },
+	            _react2.default.createElement('span', { className: 'fa fa-sort-asc', 'aria-hidden': 'true' })
+	          )
 	        ),
 	        _react2.default.createElement(
 	          'div',
@@ -22023,7 +22027,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'row' },
-	          _react2.default.createElement('button', { className: 'fa fa-sort-desc offset-xs-6', 'aria-hidden': 'true' })
+	          _react2.default.createElement(
+	            'button',
+	            { type: 'button', className: 'btn btn-outline-primary btn-sm' },
+	            _react2.default.createElement('span', { className: 'fa fa-sort-desc', 'aria-hidden': 'true' })
+	          )
 	        )
 	      );
 	    }
