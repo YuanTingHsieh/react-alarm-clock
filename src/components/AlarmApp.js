@@ -121,6 +121,7 @@ class AlarmApp extends React.Component {
 
   renderTime(value, onChangeFunc, currentTime, helpMes) {
     return (
+      <div>
           <div className="row">
             {helpMes}
           </div>
@@ -135,6 +136,7 @@ class AlarmApp extends React.Component {
           <div className="row">
             <button className="fa fa-sort-desc offset-xs-6" aria-hidden="true"></button>
           </div>
+      </div>
     );
   }
 
