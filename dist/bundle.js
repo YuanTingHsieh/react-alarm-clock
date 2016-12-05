@@ -21993,32 +21993,33 @@
 	    }
 	  }, {
 	    key: 'renderTime',
-	    value: function renderTime(value, onChangeFunc, currentTime) {
+	    value: function renderTime(value, onChangeFunc, currentTime, helpMes) {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'row' },
+	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'col-xs-4 offset-xs-2' },
+	          { className: 'row' },
+	          helpMes
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement('button', { className: 'fa fa-sort-asc offset-xs-6', 'aria-hidden': 'true' })
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
 	          _react2.default.createElement(
 	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement('span', { className: 'fa fa-sort-asc offset-xs-6', 'aria-hidden': 'true' })
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement(
-	              'div',
-	              { className: 'col-xs-2 offset-xs-5' },
-	              _react2.default.createElement('input', { type: 'text', placeholder: currentTime, value: value, className: 'form-control', onChange: onChangeFunc })
-	            )
-	          ),
-	          _react2.default.createElement(
-	            'div',
-	            { className: 'row' },
-	            _react2.default.createElement('span', { className: 'fa fa-sort-desc offset-xs-6', 'aria-hidden': 'true' })
+	            { className: 'col-xs-2 offset-xs-5' },
+	            _react2.default.createElement('input', { type: 'text', placeholder: currentTime, value: value, className: 'form-control', onChange: onChangeFunc })
 	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement('button', { className: 'fa fa-sort-desc offset-xs-6', 'aria-hidden': 'true' })
 	        )
 	      );
 	    }
@@ -22068,13 +22069,20 @@
 	          null,
 	          this.state.statusMes
 	        ),
-	        this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours()),
-	        _react2.default.createElement('input', {
-	          className: '',
-	          placeholder: 'Set minutes (0-60)!',
-	          value: this.state.inputMinute,
-	          onChange: this.handleInputMinute
-	        }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'row' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col-xs-4 offset-xs-2' },
+	            this.renderTime(this.state.inputHour, this.handleInputHour, date.getHours(), "Set Hours (0-24)!")
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'col-xs-4' },
+	            this.renderTime(this.state.inputMinute, this.handleInputMinute, date.getMinutes(), "Set Minutes (0-60)!")
+	          )
+	        ),
 	        _react2.default.createElement('input', {
 	          className: '',
 	          placeholder: 'Music you want (URL)',
