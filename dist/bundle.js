@@ -22028,11 +22028,7 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          'Alarms For Today'
-	        ),
+	        _react2.default.createElement(_Clock2.default, null),
 	        _react2.default.createElement(
 	          'h2',
 	          null,
@@ -22061,7 +22057,6 @@
 	          { onClick: this.handleAdd },
 	          'set this alarm'
 	        ),
-	        _react2.default.createElement(_Clock2.default, null),
 	        _react2.default.createElement(
 	          'section',
 	          { className: 'main' },
@@ -22158,7 +22153,7 @@
 /* 184 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
@@ -22193,7 +22188,7 @@
 	  }
 
 	  _createClass(Clock, [{
-	    key: 'setTime',
+	    key: "setTime",
 	    value: function setTime() {
 
 	      var currentdate = new Date();
@@ -22208,20 +22203,15 @@
 	      }
 
 	      // add leading zero, first convert hours to string
-	      hours = hours + '';
-	      if (hours.length == 1) {
-	        hours = '0' + hours;
-	      }
+	      hours = (hours < 10 ? "0" : "") + hours;
 
 	      // minutes are the same on every time zone
 	      var minutes = currentdate.getUTCMinutes();
 	      // add leading zero, first convert hours to string
-	      minutes = minutes + '';
-	      if (minutes.length === 1) {
-	        minutes = '0' + minutes;
-	      }
+	      minutes = (minutes < 10 ? "0" : "") + minutes;
 
 	      var seconds = currentdate.getUTCSeconds();
+	      seconds = (seconds < 10 ? "0" : "") + seconds;
 	      //console.log(hours, minutes, seconds)
 	      this.setState({
 	        hours: hours,
@@ -22230,12 +22220,12 @@
 	      });
 	    }
 	  }, {
-	    key: 'componentWillMount',
+	    key: "componentWillMount",
 	    value: function componentWillMount() {
 	      this.setTime();
 	    }
 	  }, {
-	    key: 'componentDidMount',
+	    key: "componentDidMount",
 	    value: function componentDidMount() {
 	      var newid = window.setInterval(function () {
 	        this.setTime();
@@ -22243,20 +22233,21 @@
 	      this.setState({ id: newid });
 	    }
 	  }, {
-	    key: 'componentWillUnmount',
+	    key: "componentWillUnmount",
 	    value: function componentWillUnmount() {
 	      clearInterval(this.state.id);
 	    }
 	  }, {
-	    key: 'render',
+	    key: "render",
 	    value: function render() {
 	      return _react2.default.createElement(
-	        'h1',
+	        "h1",
 	        null,
+	        "Current Time: ",
 	        this.state.hours,
-	        ':',
+	        ":",
 	        this.state.minutes,
-	        ':',
+	        ":",
 	        this.state.seconds
 	      );
 	    }
